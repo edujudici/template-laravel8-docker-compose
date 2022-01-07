@@ -3,8 +3,8 @@ services:
   app:
     build:
       args:
-        user: eduardo.judici
-        uid: 1001
+        user: ${USER}
+        uid: ${UID}
       context: ./
       dockerfile: Dockerfile
     image: laravel-image

@@ -8,6 +8,16 @@ echo "-----------------------------------------------"
 cp .env.example .env
 
 echo "-----------------------------------------------"
+echo "Project - Set USER on env file."
+echo "-----------------------------------------------"
+echo "USER=${USER}" >> .env
+
+echo "-----------------------------------------------"
+echo "Project - Set UID on env file."
+echo "-----------------------------------------------"
+echo "UID=${UID}" >> .env
+
+echo "-----------------------------------------------"
 echo "Project - Building steps and up all containers."
 echo "-----------------------------------------------"
 docker-compose up -d --build
