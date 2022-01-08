@@ -8,7 +8,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: laravel-image
-    container_name: laravel-app
+    # container_name: laravel-app
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
@@ -18,10 +18,11 @@ services:
       - app-network
     depends_on:
         - db
+        - nginx
 
   nginx:
     image: nginx:alpine
-    container_name: laravel-nginx
+    # container_name: laravel-nginx
     restart: unless-stopped
     ports:
       - 8000:80
@@ -34,7 +35,7 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: laravel-db
+    # container_name: laravel-db
     restart: unless-stopped
     ports:
       - "3306:3306"
@@ -52,7 +53,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: laravel-phpmyadmin
+    # container_name: laravel-phpmyadmin
     restart: always
     depends_on:
       - db
